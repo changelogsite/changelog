@@ -1,0 +1,12 @@
+---
+layout: null
+---
+User-agent: *
+{% if site.data.settings.allow-searchengine %}Disallow: 
+{% else %}Disallow: /
+{% endif %}
+
+User-agent: *
+Disallow: /admin
+
+Sitemap: {{ site.url }}/sitemap.xml

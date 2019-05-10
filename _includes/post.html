@@ -1,0 +1,26 @@
+<div class="row p-3">
+    <div class="col-md-3 mb-3">
+      <a href="{{ include.url | prepend: site.baseurl | replace: '//', '/' }}" class="post-date text-muted">
+        {{ include.date | date: '%B %d, %Y' }}
+      </a>
+    </div>
+    <div class="col-md-9">
+      <h2 class="title">
+        {{ include.title }}
+      </h2>
+      <div>
+        {% if include.category %}
+
+          {% for category in site.data.categories %}
+          {% if category.name == include.category %}
+          {% assign color = category.color | downcase | prepend: 'bg-' %}
+          {% endif %}
+          {% endfor %}
+          <span class="category {% if color %}{{ color }}{% endif %}">{{ include.category }}</span>
+        {% endif %}
+      </div>
+        <div class="post-content my-4 text-grey-darker leading-normal text-base font-thin">
+          {{ include.content }}
+        </div>
+    </div>
+  </div>

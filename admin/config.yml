@@ -1,0 +1,41 @@
+backend:
+  name: github
+  repo: changelogsite/changelog
+
+# This line should *not* be indented
+media_folder: "assets/uploads" # Media files will be stored in the repo under assets/uploads
+
+
+collections:
+  - name: "post" # Used in routes, e.g., /admin/collections/blog
+    label: "Post" # Used in the UI
+    folder: "_posts" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - label: "Layout"
+        name: "layout"
+        widget: "hidden"
+        default: "post"
+        
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "New", value: "New" }
+          - { label: "Bug", value: "Bug" }
+          - { label: "Update", value: "Update" }
+          - { label: "Improvement", value: "Improvement" }
+          
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        

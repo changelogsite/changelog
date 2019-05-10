@@ -1,0 +1,13 @@
+# Available colors: blue, red, orange, green, purple
+- name: New
+  color: blue
+
+- name: Bug
+  color: orange
+
+- name: Update
+  color: green
+
+- name: Improvement
+  color: purple
+    

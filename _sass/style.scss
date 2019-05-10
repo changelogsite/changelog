@@ -1,0 +1,127 @@
+body {
+    font-family: $primary-font;
+    font-size: 16px;
+    line-height: 1.8;
+    min-height: 100vh;
+    color: $text-color-primary;
+}
+
+.logo {
+    max-height: 45px;
+}
+
+footer a {
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 0.8rem;
+}
+
+.category {
+    padding: 3px 10px;
+    background: $primary-color;
+    color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+@each $color,
+$value in $tag-colors {
+    .text-#{$color} {
+        color: $value;
+    }
+
+    .bg-#{$color} {
+        background-color: $value;
+    }
+}
+
+.title {
+    color: rgba(0, 0, 0, 0.9);
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.post-content {
+
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: 1.5rem;
+        margin-bottom: 0.8rem;
+    }
+
+    strong{
+        color: darken($text-color-primary, 50%);
+        font-weight: 600;
+    }
+
+    table {
+        border: 1px solid $border-color;
+        width: 100%;
+        margin-bottom: 1rem;
+        border-collapse: collapse;
+
+        th,
+        td {
+            border: 1px solid $border-color;
+            padding: .75rem;
+            vertical-align: top;
+            border-top: 1px solid $border-color;
+        }
+
+        thead {
+
+            th,
+            td {
+                border-bottom-width: 2px;
+                padding: .75rem;
+                vertical-align: top;
+                border-top: 1px solid $border-color;
+            }
+        }
+    }
+
+    // Blockquote
+
+    blockquote {
+        background: $bg-light;
+        font-style: italic;
+        border-left: 8px solid $border-color;
+        padding: 20px;
+        margin: 20px 0px;
+        box-sizing: border-box;
+    }
+
+    a {
+        color: $primary-color;
+        &:hover {
+            color: darken($primary-color, 15%);
+        }
+    }
+
+
+
+    p code,
+    li code {
+        font-size: .8rem;
+        line-height: 1.8571;
+        color: rgba(0, 0, 0, 1);
+        background-color: $bg-light;
+        border: 1px solid $border-color;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        margin: 0 2px;
+        padding: 0 5px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin: 10px 0px;
+    }
+}

@@ -1,0 +1,18 @@
+---
+layout: default
+permalink: /
+pagination:
+  permalink: /page/:num/
+  enabled: true
+  indexpage: 'index'
+---
+<div class="post_list">
+{% for post in paginator.posts %}
+    {% include post.html title=post.title category=post.category url=post.url date=post.date content=post.content %}
+    <hr>
+{% endfor %}
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | replace: 'index.html', '' | prepend: site.baseurl }}" class="d-block text-center p-3 text-muted next-page">Load More Updates</a>
+  {% endif %}
+</div>
