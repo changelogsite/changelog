@@ -76,3 +76,7 @@ Launch at [BetaPage](https://betapage.co)
 
 ---
 Contact me for sponsorship hello@bansal.io
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
